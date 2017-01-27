@@ -1,3 +1,4 @@
+package Controller;
 import com.wolfram.jlink.*;
 
 public class SampleProgram {
@@ -9,10 +10,13 @@ public class SampleProgram {
         try {
             ml = MathLinkFactory.createKernelLink(argv);
         } catch (MathLinkException e) {
+
             System.out.println("Fatal error opening link: " + e.getMessage());
             return;
         }
-
+        for (String x : argv){
+            System.out.println(x);
+        }
         try {
             // Get rid of the initial InputNamePacket the kernel will send
             // when it is launched.

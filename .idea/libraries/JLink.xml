@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="JLink">
+    <CLASSES>
+      <root url="file://C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink/Documentation/JavaDoc" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink/Examples/Part1/GraphicsDlg" />
+      <root url="file://C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink/Examples/Part2" />
+      <root url="file://C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink/Examples/Part2/GraphicsApp" />
+      <root url="file://C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink/Examples/Part2/SimpleFrontEnd" />
+      <root url="file://C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink/Source/Java" />
+    </SOURCES>
+    <jarDirectory url="file://C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink" recursive="false" />
+  </library>
+</component>
