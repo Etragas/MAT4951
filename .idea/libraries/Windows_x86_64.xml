@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Windows-x86-64">
+    <CLASSES />
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink/SystemFiles/Libraries/Windows-x86-64" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>
