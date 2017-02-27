@@ -1,0 +1,2 @@
+#!/bin/bash
+java -jar C:\Users\Etrag\IdeaProjects\MAT4951\out\artifacts\src_jar\src.jar -genPackage "" -genPackageArguments package_args -genKernelArguments "-linkmode launch -linkname"  -genKernel "C:\Program Files\Wolfram Research\Mathematica\11.0\MathKernel.exe" -minKernel "C:\Program Files\MATLAB\R2016b\bin\matlab.exe" -minKernelArguments ""

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="Windows-x86-64">
+    <output-path>$PROJECT_DIR$/out/artifacts/Windows_x86_64</output-path>
+    <root id="root">
+      <element id="library" level="project" name="Windows-x86-64" />
+    </root>
+  </artifact>
+</component>
