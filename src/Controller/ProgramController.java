@@ -6,6 +6,7 @@ import Controller.FunctionGenerators.FunctionGenerator;
 import Controller.FunctionMinimizers.FunctionMinimizer;
 import Controller.SessionHandlers.*;
 import com.sun.deploy.util.StringUtils;
+import com.sun.deploy.util.SystemUtils;
 import com.wolfram.jlink.ExprFormatException;
 import com.wolfram.jlink.MathLinkException;
 import matlabcontrol.*;
@@ -45,9 +46,10 @@ public class ProgramController {
 
     public static void main(String[] args) throws MathLinkException, ParseException, MatlabConnectionException, MatlabInvocationException, ExprFormatException {
 
-
-        File dll = new File("lib/JlinkNativeLibrary.dll");
-        System.load(dll.getAbsolutePath());
+        if (System.getProperty("os.name").contains("Windows")) {
+            File dll = new File("lib/JlinkNativeLibrary.dll");
+            System.load(dll.getAbsolutePath());
+        }
 
 
         Options options = new Options();
