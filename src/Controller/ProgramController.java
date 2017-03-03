@@ -50,6 +50,10 @@ public class ProgramController {
             File dll = new File("lib/JlinkNativeLibrary.dll");
             System.load(dll.getAbsolutePath());
         }
+        if (System.getProperty("os.name").contains("OSX")) {
+            String jLinkDir = "/Applications/Mathematica.app/Contents/SystemFiles/Links/JLink/JLink.jar";
+            System.setProperty("com.wolfram.jlink.libdir", jLinkDir);
+        }
 
 
         Options options = new Options();
