@@ -50,6 +50,10 @@ public class ProgramController {
             File dll = new File("lib/JlinkNativeLibrary.dll");
             System.load(dll.getAbsolutePath());
         }
+        if (System.getProperty("os.name").contains("OSX")) {
+            String jLinkDir = "/Applications/Mathematica.app/Contents/SystemFiles/Links/JLink/JLink.jar";
+            System.setProperty("com.wolfram.jlink.libdir", jLinkDir);
+        }
 
 
         Options options = new Options();
@@ -73,7 +77,7 @@ public class ProgramController {
         generatorParams = new MathematicaArgumentHandler().parseArgs(line);
         generatorSession = new MathematicaSession(generatorParams);
         functionGenerator= generatorSession.buildFunctionGenerator(generatorParams);
-
+        System.out.println(functionGenerator.getFunction());
         minimizerParams = new MatlabArgumentHandler().parseArgs(line);
         //Create a proxy, which we will use to control MATLAB
         minimizerSession = new MatlabSession(minimizerParams);

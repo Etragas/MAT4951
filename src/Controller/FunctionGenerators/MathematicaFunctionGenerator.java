@@ -40,9 +40,13 @@ public class MathematicaFunctionGenerator implements FunctionGenerator {
         String expr = link.evaluateToOutputForm(String.format("ReadString[\"%s\"]",min_file.getName()),0);
         link.evaluate("Needs[\"ToMatlab`\"]");
         link.discardAnswer();
+        link.evaluate("$NumberMarks = False");
+        link.discardAnswer();
+        link.evaluate("Needs[\"ToMatlab`\"]");
+        link.discardAnswer();
         System.out.println(link.evaluateToOutputForm("Directory[]",0));
 
-        String function = link.evaluateToOutputForm(format("ToMatlab[ToExpression[\"%s\",TraditionalForm]]",expr),0);
+        String function = link.evaluateToOutputForm(format("ToMatlab[Extract[ToExpression[ReadString[\"%s\"],TraditionalForm,],1]]",min_file.getName()),0);
         link.evaluate("Close[f]");
 
         //        link.waitForAnswer();
