@@ -8,7 +8,6 @@ import matlabcontrol.*;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.List;
-
 import static Controller.ArgumentHandlers.ArgumentHandler.*;
 
 /**
@@ -49,9 +48,10 @@ public class MatlabSession extends MinimizerSession {
         FunctionMinimizer fm = new MatlabFunctionMinimizer() {
             @Override
             public List<Float> minimize(String function) throws MatlabInvocationException {
-                function = "'" + function.replace("\n","").replace("...","") + "'";
+                function = "'" + function.replace("\n","").replace("...","").replaceAll("\\s+","").replace(";","") + "'";
                 System.out.println(function);
                 System.out.println(proxy.isConnected());
+                proxy.returningEval(String.format("cd(\'%s\')",System.getProperty("user.dir")+"/Files"),0);
                 Object[] results = proxy.returningEval(String.format("minimizer(%s);",function),1);
                 double[] params = (double[]) results[0];
                 System.out.println(params);
