@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="JLink1">
     <CLASSES>
-      <root url="jar://C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink/JLink.jar!/" />
+      <root url="jar:///Applications/Mathematica.app/Contents/SystemFiles/Links/JLink/JLink.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

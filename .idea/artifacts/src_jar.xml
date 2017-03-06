@@ -10,6 +10,7 @@
       <element id="extracted-dir" path="C:/Program Files/Wolfram Research/Mathematica/11.0/SystemFiles/Links/JLink/JLink.jar" path-in-jar="/" />
       <element id="artifact" artifact-name="commons-cli-1_3-javadoc_jar_" />
       <element id="artifact" artifact-name="Windows-x86-64" />
+      <element id="library" level="project" name="JLink1" />
     </root>
   </artifact>
 </component>
