@@ -12,7 +12,7 @@ public abstract class FunctionMinimizer {
         return null;
     }
 
-    public List<Float> minimize(String function) throws MatlabInvocationException {
+    public List<Float> minimize(List<String> variables, String function) throws MatlabInvocationException {
         return null;
     }
 }

@@ -7,6 +7,7 @@ import matlabcontrol.*;
 
 import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.Iterator;
 import java.util.List;
 import static Controller.ArgumentHandlers.ArgumentHandler.*;
 
@@ -47,12 +48,27 @@ public class MatlabSession extends MinimizerSession {
     public FunctionMinimizer buildFunctionMinimizer(Dictionary<String, String> args) throws MathLinkException {
         FunctionMinimizer fm = new MatlabFunctionMinimizer() {
             @Override
-            public List<Float> minimize(String function) throws MatlabInvocationException {
-                function = "'" + function.replace("\n","").replace("...","").replaceAll("\\s+","").replace(";","") + "'";
-                System.out.println(function);
+            public List<Float> minimize(List<String> variables, String function) throws MatlabInvocationException {
+
+                //Create function headed with variables
+                StringBuilder stringBuilder = new StringBuilder();
+                Iterator<String> varList = variables.listIterator();
+
+                stringBuilder.append("'@(");
+                System.out.println(variables);
+                stringBuilder.append(varList.next());
+                while (varList.hasNext()){
+                    stringBuilder.append(String.format(",%s",varList.next()));
+                }
+                stringBuilder.append(")");
+                stringBuilder.append(function + "'");
+
+                System.out.println(stringBuilder.toString());
+
                 System.out.println(proxy.isConnected());
                 proxy.returningEval(String.format("cd(\'%s\')",System.getProperty("user.dir")+"/Files"),0);
-                Object[] results = proxy.returningEval(String.format("minimizer(%s);",function),1);
+                System.out.println(stringBuilder.toString());
+                Object[] results = proxy.returningEval(String.format("minimizer(%s);",stringBuilder.toString()),1);
                 double[] params = (double[]) results[0];
                 System.out.println(params);
                 System.out.println(params[0]);
